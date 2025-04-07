@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useMenu } from "./MenuContext";
+import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Menu() {
   const { isOpen } = useMenu();
@@ -41,7 +42,14 @@ export default function Menu() {
                     <div className="item-inner">
                       <div className="link-wrapper">
                         <div className="link">
-                          <a href="https://www.instagram.com/sorravich._/" target="_blank" rel="noreferrer">Instagram</a>
+                        <a
+                          href="https://www.instagram.com/sorravich._/"
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label="Instagram"
+                        >
+                          <FaInstagram size={26} />
+                        </a>
                         </div>
                         <div className="link-underline"></div>
                       </div>
@@ -51,7 +59,31 @@ export default function Menu() {
                     <div className="item-inner">
                       <div className="link-wrapper">
                         <div className="link">
-                          <a href="https://github.com/SorravichL" target="_blank" rel="noreferrer">Github</a>
+                        <a
+                          href="https://github.com/SorravichL"
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label="Github"
+                        >
+                          <FaGithub size={26} />
+                        </a>
+                        </div>
+                        <div className="link-underline"></div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="item-inner">
+                      <div className="link-wrapper">
+                        <div className="link">
+                        <a
+                          href="https://www.linkedin.com/in/sorravich-lakngoenchai-7b1215357/"
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label="LinkedIn"
+                        >
+                          <FaLinkedin size={26} />
+                        </a>
                         </div>
                         <div className="link-underline"></div>
                       </div>

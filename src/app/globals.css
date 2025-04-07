@@ -222,7 +222,6 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
-
 .home, .home .intro-wrapper {
   position: relative;
   display: flex;
@@ -260,7 +259,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .intro p {
   font-size: 1.2rem;
-  color: #333;
+  color: var(--foreground-color);
   margin-top: 20px;
 }
 
