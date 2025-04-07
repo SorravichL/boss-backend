@@ -1,0 +1,18 @@
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: auto;
+  margin: calc(var(--top-internal-margin) * 2) 0 0 1.5rem;
+  white-space: nowrap;
+}
