@@ -5,7 +5,8 @@ import { createContext, useContext, useState } from "react";
 
 interface MenuContextType {
     isOpen: boolean;
-    toggleMenu: () => void;
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    toggleMenu:()=>void;
   }
 
   const MenuContext = createContext<MenuContextType | undefined>(undefined);
@@ -18,14 +19,14 @@ interface MenuContextType {
     return context;
   };
 
-export const MenuProvider = ({ children }: { children: React.ReactNode }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  export const MenuProvider = ({ children }: { children: React.ReactNode }) => {
+    const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => setIsOpen(prev => !prev);
-
-  return (
-    <MenuContext.Provider value={{ isOpen, toggleMenu }}>
-      {children}
-    </MenuContext.Provider>
-  );
-};
+    const toggleMenu = () => setIsOpen(prev => !prev);
+  
+    return (
+      <MenuContext.Provider value={{ isOpen, setIsOpen, toggleMenu }}>
+        {children}
+      </MenuContext.Provider>
+    );
+  };

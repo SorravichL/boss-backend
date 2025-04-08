@@ -5,8 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useMenu } from "./MenuContext";
 import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 
+
 export default function Menu() {
-  const { isOpen } = useMenu();
+  const { isOpen, setIsOpen } = useMenu();
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -28,10 +34,34 @@ export default function Menu() {
             <div className="menu-items">
               <nav>
                 <ol>
-                  <li><div className="item-inner"><Link href="/"><h1>Home</h1></Link></div></li>
-                  <li><div className="item-inner"><Link href="/work"><h1>Work</h1></Link></div></li>
-                  <li><div className="item-inner"><Link href="/about"><h1>About</h1></Link></div></li>
-                  <li><div className="item-inner"><Link href="/contact"><h1>Contact</h1></Link></div></li>
+                  <li>
+                    <div className="item-inner">
+                      <Link href="/" onClick={handleLinkClick}>
+                        <h1>Home</h1>
+                      </Link>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="item-inner">
+                      <Link href="/work" onClick={handleLinkClick}>
+                        <h1>Work</h1>
+                      </Link>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="item-inner">
+                      <Link href="/about" onClick={handleLinkClick}>
+                        <h1>About</h1>
+                      </Link>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="item-inner">
+                      <Link href="/contact" onClick={handleLinkClick}>
+                        <h1>Contact</h1>
+                      </Link>
+                    </div>
+                  </li>
                 </ol>
               </nav>
             </div>
@@ -42,14 +72,14 @@ export default function Menu() {
                     <div className="item-inner">
                       <div className="link-wrapper">
                         <div className="link">
-                        <a
-                          href="https://www.instagram.com/sorravich._/"
-                          target="_blank"
-                          rel="noreferrer"
-                          aria-label="Instagram"
-                        >
-                          <FaInstagram size={26} />
-                        </a>
+                          <Link
+                            href="https://www.instagram.com/sorravich._/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Instagram"
+                          >
+                            <FaInstagram size={26} />
+                          </Link>
                         </div>
                         <div className="link-underline"></div>
                       </div>
@@ -59,14 +89,14 @@ export default function Menu() {
                     <div className="item-inner">
                       <div className="link-wrapper">
                         <div className="link">
-                        <a
-                          href="https://github.com/SorravichL"
-                          target="_blank"
-                          rel="noreferrer"
-                          aria-label="Github"
-                        >
-                          <FaGithub size={26} />
-                        </a>
+                          <Link
+                            href="https://github.com/SorravichL"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Github"
+                          >
+                            <FaGithub size={26} />
+                          </Link>
                         </div>
                         <div className="link-underline"></div>
                       </div>
@@ -76,14 +106,14 @@ export default function Menu() {
                     <div className="item-inner">
                       <div className="link-wrapper">
                         <div className="link">
-                        <a
-                          href="https://www.linkedin.com/in/sorravich-lakngoenchai-7b1215357/"
-                          target="_blank"
-                          rel="noreferrer"
-                          aria-label="LinkedIn"
-                        >
-                          <FaLinkedin size={26} />
-                        </a>
+                          <Link
+                            href="https://www.linkedin.com/in/sorravich-lakngoenchai-7b1215357/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="LinkedIn"
+                          >
+                            <FaLinkedin size={26} />
+                          </Link>
                         </div>
                         <div className="link-underline"></div>
                       </div>

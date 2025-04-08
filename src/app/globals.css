@@ -21,6 +21,10 @@ html[data-theme="dark"] {
   --foreground-color: #d6d1ed;
 }
 
+html[data-theme="dark"] .intro h1 {
+  color: #99ff6d;
+}
+
 @font-face {
   font-family: "thoge";
   src: url("/fonts/thoge.otf") format("opentype");
@@ -147,6 +151,7 @@ header .header-content {
   align-items: center;
   overflow: hidden;
   padding: 0 88px 0 96px;
+  top: 96px;
 }
 
 header .header-content .left-part,
@@ -250,7 +255,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   font-size: 3rem;
   color: #4d4d4d;
-  background: linear-gradient(45deg, #ff6ec7, #8e44ad);
+  background: linear-gradient(45deg, #0025fa, #cd00ed);
   background-clip: text;
   color: transparent;
   letter-spacing: 2px;

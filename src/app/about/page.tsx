@@ -1,14 +1,12 @@
 "use client";
 
-export default function Home() {
-  
+export default function About() {
   return (
     <div className="home">
       <div className="intro-wrapper">
         <div className="intro-text">
           <div className="intro">
-            <h1>Hey, I&rsquo;m Sorravich</h1>
-            <p>I&rsquo;m a Software engineer & Full stack developer</p>
+            <h1>Hey this is about page</h1>
           </div>
         </div>
       </div>
