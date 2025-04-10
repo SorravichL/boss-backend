@@ -51,7 +51,7 @@ export default function RootLayout({
 
           <div className="canvas"></div>
 
-          <main className="container">
+          <main className="main-container">
             <div className="opacity-100 transform-none">
               <div className="data-scroll-container">
                 <div className="data-scroll-section">

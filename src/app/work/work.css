@@ -1,0 +1,90 @@
+/*  ─────────── Layout wrapper ───────────  */
+.work-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  height: calc(100vh - 192px);     /* adjust if your header height differs */
+  padding: var(--top-margin) 0 0 0;
+}
+
+/*  ─────────── Preview (left) ───────────  */
+.work-preview {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 0;                   /* allow grid row to shrink */
+}
+
+.work-preview-img { object-fit: cover; }
+
+.work-preview-title {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  font-size: 3rem;
+  letter-spacing: 0.05em;
+  color: var(--foreground-color);
+  mix-blend-mode: difference;
+}
+
+/*  ─────────── List (right) ───────────  */
+.work-list {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 0 var(--left-right-margin) 0 var(--left-right-internal-margin);
+}
+
+.work-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+  position: sticky;                /* stays visible */
+  top: 0;
+  z-index: 1;
+}
+
+.work-scroll {
+  flex: 1;
+  min-height: 0;                   /* allows shrink */
+  overflow-y: auto;                /* independent scroll */
+  padding-right: 4px;              /* room for scrollbar */
+  scrollbar-width: thin;
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;
+}
+
+.work-scroll::-webkit-scrollbar {
+  width: 6px;
+  display: none;
+}
+.work-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,.25);
+  border-radius: 3px;
+}
+
+.work-items { margin: 0; padding: 0; list-style: none; }
+
+.work-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid currentColor;
+  cursor: pointer;
+  transition: color 0.25s;
+}
+.work-item:hover        { color: #99ff6d; }
+.work-item-active       { font-weight: 700; }
+.work-item-active::before { content: "→"; margin-right: 0.5rem; }
+
+.work-item-cat { font-size: 0.875rem; opacity: 0.6; }
+
+/*  ─────────── Mobile stack ───────────  */
+@media (max-width: 900px) {
+  .work-container { grid-template-columns: 1fr; gap: 2rem; padding: 0 24px; }
+  .work-preview   { order: 2; height: 60vh; }
+}
